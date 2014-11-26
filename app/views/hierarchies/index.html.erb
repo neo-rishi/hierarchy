@@ -1,10 +1,16 @@
 <div class= "container">
-  <h2 class= "h2_color">
-    <b>Your Family Hierarchy</b>
-  </h2>
-  <div class= "inner-div" id= "div_0">
-  </div>
-  <% @hierarchies.each do | h | %>
-    <%= render partial: 'new_block', locals: {h: h} %>
+  <% unless @hierarchies.blank?%>
+    <h2 class= "h2_color">
+      <b>Your Family Hierarchy</b>
+    </h2>
+    <div class= "inner-div" id= "div_0">
+    </div>
+    <% @hierarchies.each do | h | %>
+      <%= render partial: 'new_block', locals: {h: h} %>
+    <% end %>
+  <% else %>
+     <h2 class= "h2_color">
+      <b> Family Hierarchy Does Not Exists </b>
+    </h2>
   <% end %>
 </div>
