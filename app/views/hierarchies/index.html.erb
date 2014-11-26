@@ -1,0 +1,10 @@
+<div class= "container">
+  <h2 class= "h2_color">
+    <b>Your Family Hierarchy</b>
+  </h2>
+  <div class= "inner-div" id= "div_0">
+  </div>
+  <% @hierarchies.each do | h | %>
+    <%= render partial: 'new_block', locals: {h: h} %>
+  <% end %>
+</div>

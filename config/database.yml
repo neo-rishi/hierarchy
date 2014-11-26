@@ -1,0 +1,30 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql
+  encoding: unicode
+  pool: 5
+  user: root
+  password: root
+  timeout: 5000
+  host: localhost
+development:
+  adapter: mysql
+  database: parent_child_development
+  user: root
+  password: root
+  host: localhost
+test:
+  adapter: mysql
+  database: user_test
+
+production:
+  adapter: mysql
+  database: parent_child_development
+  user: root
+  password: root
+  host: localhost
