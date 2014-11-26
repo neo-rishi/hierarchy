@@ -1,0 +1,3 @@
+<script type="text/javascript">
+  $('#div_<%= h.parent_id %>').append('<%= escape_javascript render(partial: "new_div", locals: {id: h.id, name: h.name }) %>');
+</script>

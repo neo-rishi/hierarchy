@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hierarchy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar navbar-default navbar-fixed-top">
+      <% if user_signed_in? %>
+      <ul class="nav nav-pills pull-left">
+        <li> <%= link_to 'Add Family', new_hierarchy_path %></li>
+        <li> <%= link_to 'show Hierarchy', hierarchies_path%></li>
+        </ul>
+       <ul class="nav nav-pills pull-right">
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </li>
+       <ul>
+      <% else %>
+        <ul class="nav nav-pills pull-left">
+
+        </ul>
+       <ul class="nav nav-pills pull-right">
+          <li>
+            <%= link_to 'sigin', new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to 'signup', new_user_registration_path %>
+          </li>
+        </ul>
+      <% end %>
+    </ul>
+  </div>
+  <div style="margin-top: 50px">
+    <%= bootstrap_flash %>
+  </div>
+  <%= yield %>
+
+</body>
+</html>
